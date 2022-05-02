@@ -1,22 +1,34 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using StudyStore.Data;
+using StudyStore.Business;
 using StudyStoreApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Services
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+/* Configuring BbContext - Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(); */
+
+// Configuring BbContext - App
+builder.Services.AddDbContext<StudyStoreDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure 
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();

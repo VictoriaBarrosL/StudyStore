@@ -1,4 +1,5 @@
-﻿namespace DevIO.Business.Models
+﻿
+namespace StudyStore.Business.Models
 {
     public abstract class Entity
     {

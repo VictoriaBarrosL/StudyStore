@@ -1,8 +1,9 @@
-﻿namespace DevIO.Business.Models
+﻿
+namespace StudyStore.Business.Models
 {
     public class Produto : Entity
     {
-        /*Foreign Key*/
+        /*Foreing Key*/
         public Guid FornecedorId { get; set; }
 
         public string Nome { get; set; }
@@ -12,7 +13,7 @@
         public DateTime DataCadastro { get; set; }
         public bool Ativo { get; set; }
 
-        /* EF Relations - List */
+        /* EF Relations */
         public Fornecedor Fornecedor { get; set; }
     }
 }

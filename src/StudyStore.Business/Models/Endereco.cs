@@ -1,8 +1,9 @@
-﻿namespace DevIO.Business.Models
+﻿
+namespace StudyStore.Business.Models
 {
     public class Endereco : Entity
     {
-        /*Foreign Key*/
+        /*Foreing Key*/
         public Guid FornecedorId { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
@@ -16,3 +17,4 @@
         public Fornecedor Fornecedor { get; set; }
     }
 }
+
