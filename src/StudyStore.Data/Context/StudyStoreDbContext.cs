@@ -8,7 +8,7 @@ namespace StudyStore.Data
     {
         public StudyStoreDbContext(DbContextOptions<StudyStoreDbContext> options) : base(options)
         {
-        
+
         }
 
         public DbSet<Produto> Produtos { get; set; }
@@ -22,6 +22,11 @@ namespace StudyStore.Data
                .SelectMany(e => e.GetProperties()
                    .Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
+
+           foreach (var property in modelBuilder.Model.GetEntityTypes()
+             .SelectMany(e => e.GetProperties()
+                .Where(p => p.ClrType == typeof(decimal))))
+                property.SetColumnType("numeric(100)");
 
             // Applying Mappings
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudyStoreDbContext).Assembly);

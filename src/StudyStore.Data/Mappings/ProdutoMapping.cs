@@ -24,36 +24,7 @@ namespace StudyStore.Data.Mappings
                 .HasColumnType("varchar(100)");
 
             builder.ToTable("Produtos");
-        }
-
-        public class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
-        {
-            public void Configure(EntityTypeBuilder<Fornecedor> builder)
-            {
-                builder.HasKey(p => p.Id);
-
-                builder.Property(p => p.Nome)
-                    .IsRequired()
-                    .HasColumnType("varchar(200)");
-
-                builder.Property(p => p.Documento)
-                    .IsRequired()
-                    .HasColumnType("varchar(14)");
-
-                // 1 : 1 => Fornecedor : Endereco
-                builder.HasOne(f => f.Endereco)
-                    .WithOne(e => e.Fornecedor);
-
-                builder.ToTable("Fornecedores");
-
-                // 1 : N => Forneceor : Produtos
-                builder.HasMany(f => f.Produtos)
-                    .WithOne(p => p.Fornecedor)
-                    .HasForeignKey(p => p.Fornecedor.Id);
-
-                builder.ToTable("Fornecedores");
-
-            }
+        
         }
     }
 }

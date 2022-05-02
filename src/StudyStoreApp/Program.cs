@@ -14,11 +14,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
-/* Configuring BbContext - Identity
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews(); */
-
 // Configuring BbContext - App
 builder.Services.AddDbContext<StudyStoreDbContext>(options =>
 {
