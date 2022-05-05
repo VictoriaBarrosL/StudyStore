@@ -1,4 +1,4 @@
-namespace StudyStoreApp.ViewModels
+﻿namespace StudyStoreApp.ViewModels
 {
     public class ErrorViewModel
     {
@@ -6,4 +6,6 @@ namespace StudyStoreApp.ViewModels
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+
 }
+

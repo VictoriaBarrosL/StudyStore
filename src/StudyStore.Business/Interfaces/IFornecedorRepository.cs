@@ -11,5 +11,7 @@ namespace StudyStore.Business.Interfaces
     {
         Task<Fornecedor> ObterfornecedorEndereco(Guid id);
         Task<Fornecedor> ObterfornecedorProdutosEndereco(Guid id);
+        Task<object> ObterFornecedorEndereco(Guid id);
+        Task<object> ObterFornecedorProdutosEndereco(Guid id);
     }
 }

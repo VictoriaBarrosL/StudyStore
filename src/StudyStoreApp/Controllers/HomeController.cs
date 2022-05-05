@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StudyStoreApp.Models;
+using StudyStoreApp.ViewModels;
 using System.Diagnostics;
 
 namespace StudyStoreApp.Controllers
