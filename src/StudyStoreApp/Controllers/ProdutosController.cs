@@ -6,7 +6,7 @@ using StudyStoreApp.ViewModels;
 
 namespace StudyStoreApp.Controllers
 {
-   
+    [Authorize]
     public class ProdutosController : BaseController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -26,12 +26,15 @@ namespace StudyStoreApp.Controllers
             _produtoService = produtoService;
         }
 
+        [AllowAnonymous]
+        [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
-  
+        [AllowAnonymous]
+        [Route("dados-do-produto/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -44,7 +47,8 @@ namespace StudyStoreApp.Controllers
             return View(produtoViewModel);
         }
 
-
+        [ClaimsAuthorize("Produto", "Adicionar")]
+        [Route("novo-produto")]
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
@@ -52,6 +56,9 @@ namespace StudyStoreApp.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Adicionar")]
+        [Route("novo-produto")]
+        [HttpPost]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
         {
             produtoViewModel = await PopularFornecedores(produtoViewModel);
@@ -71,6 +78,8 @@ namespace StudyStoreApp.Controllers
             return RedirectToAction("Index");
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
+        [Route("editar-produto/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -83,6 +92,8 @@ namespace StudyStoreApp.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
+        [Route("editar-produto/{id:guid}")]
         [HttpPost]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
         {
