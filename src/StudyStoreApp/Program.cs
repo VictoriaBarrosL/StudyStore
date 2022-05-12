@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudyStore.Data;
-using StudyStore.Business;
 using StudyStoreApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
