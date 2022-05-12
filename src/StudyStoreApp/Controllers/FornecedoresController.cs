@@ -3,9 +3,9 @@ using StudyStore.Business.Interfaces;
 using StudyStore.Business.Models;
 using StudyStoreApp.ViewModels;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StudyStoreApp.Controllers
-{
 {
     [Authorize]
     public class FornecedoresController : BaseController

@@ -3,6 +3,7 @@ using AutoMapper;
 using StudyStore.Business.Interfaces;
 using StudyStore.Business.Models;
 using StudyStoreApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StudyStoreApp.Controllers
 {
