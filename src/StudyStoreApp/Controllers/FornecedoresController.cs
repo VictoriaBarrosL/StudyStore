@@ -6,8 +6,9 @@ using AutoMapper;
 
 namespace StudyStoreApp.Controllers
 {
+{
     [Authorize]
-    public class FornecedoresController : Controller
+    public class FornecedoresController : BaseController
     {
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IFornecedorService _fornecedorService;
