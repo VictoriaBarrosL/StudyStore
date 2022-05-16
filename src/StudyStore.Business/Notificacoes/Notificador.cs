@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 using StudyStore.Business.Interfaces;
 
 namespace StudyStore.Business.Notificacoes
-    public class Notificador : INotificador
 {
-    private List<Notificacao> _notificacoes;
-
-    public Notificador()
+    public class Notificador : INotificador
     {
-        _notificacoes = new List<Notificacao>();
-    }
+        private List<Notificacao> _notificacoes;
 
-    public void Handle(Notificacao notificacao)
-    {
-        _notificacoes.Add(notificacao);
-    }
+        public Notificador()
+        {
+            _notificacoes = new List<Notificacao>();
+        }
 
-    public List<Notificacao> ObterNotificacoes()
-    {
-        return _notificacoes;
-    }
+        public void Handle(Notificacao notificacao)
+        {
+            _notificacoes.Add(notificacao);
+        }
 
-    public bool TemNotificacao()
-    {
-        return _notificacoes.Any();
+        public List<Notificacao> ObterNotificacoes()
+        {
+            return _notificacoes;
+        }
+
+        public bool TemNotificacao()
+        {
+            return _notificacoes.Any();
+        }
     }
 }
-}
+

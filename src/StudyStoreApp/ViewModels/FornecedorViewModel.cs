@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudyStoreApp.ViewModels
 {
@@ -15,10 +16,12 @@ namespace StudyStoreApp.ViewModels
         [StringLength(14, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 11)]
         public string Documento { get; set; }
 
+        [DisplayName("Tipo")]
         public int TipoFornecedor { get; set; }
 
         public EnderecoViewModel Endereco { get; set; }
 
+        [DisplayName("Ativo?")]
         public bool Ativo { get; set; }
 
         public IEnumerable<ProdutoViewModel> Produtos { get; set; }

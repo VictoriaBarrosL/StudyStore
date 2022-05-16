@@ -1,12 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudyStore.Business.Interfaces;
 
 namespace StudyStoreApp.Controllers
 {
-    public class BaseController : Controller
+    public abstract class BaseController : Controller
     {
-        public IActionResult Index()
+        private readonly INotificador _notificador;
+
+        protected BaseController(INotificador notificador)
         {
-            return View();
+            _notificador = notificador;
+        }
+
+        protected bool OperacaoValida()
+        {
+            return !_notificador.TemNotificacao();
         }
     }
 }
