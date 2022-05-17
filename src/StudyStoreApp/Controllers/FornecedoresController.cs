@@ -4,6 +4,7 @@ using StudyStore.Business.Models;
 using StudyStoreApp.ViewModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using StudyStoreApp.Extensions;
 
 namespace StudyStoreApp.Controllers
 {

@@ -40,5 +40,15 @@ namespace StudyStore.Data.Repository
         {
             throw new NotImplementedException();
         }
+
+        Task<object> IFornecedorRepository.ObterFornecedorEndereco(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<object> IFornecedorRepository.ObterFornecedorProdutosEndereco(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
