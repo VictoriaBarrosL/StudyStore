@@ -12,8 +12,8 @@ using StudyStore.Data;
 namespace StudyStore.Data.Migrations
 {
     [DbContext(typeof(StudyStoreDbContext))]
-    [Migration("20220502214205_Initial")]
-    partial class Initial
+    [Migration("20220519195003_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

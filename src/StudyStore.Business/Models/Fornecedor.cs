@@ -1,5 +1,4 @@
-﻿
-namespace StudyStore.Business.Models
+﻿namespace StudyStore.Business.Models
 {
     public class Fornecedor : Entity
     {

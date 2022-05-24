@@ -1,4 +1,8 @@
-﻿using StudyStore.Business.Interfaces;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using StudyStore.Business.Interfaces;
+using StudyStore.Business.Models;
 using StudyStore.Business.Models.Validations;
 
 namespace StudyStore.Business.Models.Services
@@ -52,7 +56,8 @@ namespace StudyStore.Business.Models.Services
 
         public async Task Remover(Guid id)
         {
-            if (_fornecedorRepository.ObterFornecedorProdutosEndereco(id).Result.Produtos.Any())
+            var fornecedor = await _fornecedorRepository.ObterFornecedorProdutosEndereco(id);
+
             {
                 Notificar("O fornecedor possui produtos cadastrados!");
                 return;

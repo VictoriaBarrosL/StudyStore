@@ -1,12 +1,7 @@
-﻿using StudyStore.Business.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using StudyStore.Business.Interfaces;
+using StudyStore.Business.Models;
 using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
 
 namespace StudyStore.Data.Repository
 {
