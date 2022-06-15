@@ -1,3 +1,5 @@
+![StudyStoreMVC](https://user-images.githubusercontent.com/96137264/173932479-8f77aefc-52ac-46d8-a16e-d51cb8265f4d.jpeg)
+
 # StudyStore
 
 StudyStore is an MVC web application project built on the following layers:
